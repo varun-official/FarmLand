@@ -1,0 +1,38 @@
+.insidediv{
+     position:absolute;
+      color:white;
+      top:0px;
+      left:0px;
+      background-color:white;
+      width:400px; 
+      height:400px;
+      box-shadow: 0px 4px 25px 2px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+
+      h1{
+          margin-top: 30px;
+          color: rgba(20, 74, 5, 0.7);;
+          font-size: 46px;
+      }
+    }
+
+.insidedivcrop{
+  position:absolute;
+   color:white;
+   top:200px;
+   left:0px;
+   width:400px; 
+   height:400px;
+   display: flex;
+   flex-direction: column;
+   background-color: rgba(20, 74, 5, 0.4);;
+   border-radius: 0px 90px 0px 0px;
+
+
+   h1{
+       margin-top: 30px;
+       color: rgba(20, 74, 5, 0.7);;
+       font-size: 46px;
+   }
+ }

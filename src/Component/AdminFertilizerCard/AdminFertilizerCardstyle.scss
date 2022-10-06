@@ -1,0 +1,119 @@
+.admincardmainfertilizer{
+    display: flex;
+    flex-direction: column;
+    width: 306px;
+    height: 426px;
+    box-shadow: 0px 4px 25px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    margin-right: 40px;
+    margin-top: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    .admincardimgfer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img{
+            width: 306px;
+            height: 246px;
+            object-fit: cover;
+            border-radius: 8px 8px 0px 0px;
+        }
+    }
+    .admincardheaddingfer{
+        display: flex;
+        flex-direction: column;
+        margin-left: 24px;
+        margin-top: 16px;
+
+        h1{
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 22px;
+        }
+    }
+
+    .adminpricefer{
+        display: flex;
+        flex-direction: row;
+        margin-left: 24px;
+        margin-top: 8px;
+
+        h3{
+            font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+        }
+    }
+
+
+    .admincardbuttonfer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 16px;
+        margin-left: 6px;
+
+        .adminbtnleftfer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 130px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #F88379;
+            border: 1px solid #EE1212;
+            margin-right: 8px;
+            cursor: pointer;
+
+
+            h4{
+                margin-left: 10px;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 800;
+                font-size: 15px;
+                line-height: 17px;
+                color: #ffffff;
+            }
+        }
+        .adminbtnrightfer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 130px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #597F4F;
+            border: 1px solid #597F4F;
+            margin-left: 8px;
+            cursor: pointer;
+
+
+
+            h4{
+                margin-left: 10px;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 15px;
+                line-height: 17px;
+                color: #ffffff;
+            }
+        }
+    }
+
+
+
+}

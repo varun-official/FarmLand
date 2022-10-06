@@ -1,0 +1,349 @@
+.cropdecmain{
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    width: 100vw;
+
+
+    .cropbanner{
+        max-width: 100vw;
+
+        img{
+            width: 100vw;
+            height: 400px;
+            object-fit: cover;
+
+        }
+    }
+
+    .cropcontent{
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+        margin-top: 20px;
+
+        .cropheading{
+            display: flex;
+            flex-direction: column;
+
+            h1{
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 40px;
+                line-height: 61px;
+            }
+        }
+
+    }
+
+
+    .cropshortdec{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 30px;
+
+        h4{
+            padding-left: 8px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 32px;
+        }
+
+        hr{
+            width: 40px;
+            transform: rotate(90deg);
+        }
+    }
+
+    .cropdecmain{
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+
+        .cropdec{
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            p{
+                margin-top: 20px;
+                font-size: 20px;
+        line-height: 32px;
+
+            }
+        }
+
+
+        .usefulllink{
+
+            margin-left: 50px;
+
+            .link{
+                margin-top: 20px;
+                display: flex;
+                flex-direction: row;
+                a{
+                    padding-left: 8px;
+                }
+            }
+        }
+
+        
+    }
+
+    .subcrop{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 30px;
+
+        .subcroplist{
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+        }
+    }
+
+    .varieties{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 30px;
+
+        .varietieslist{
+            display: flex;
+            flex-direction: row;
+            margin-top: 20px;
+
+        }
+    }
+
+
+    .soilpreparation{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+
+        .soilpreparationlist{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+    .seeding
+    {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+
+        .seeding_heading{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .link{
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+                a{
+                    padding-left: 20px;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .seedinglist{
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+    .watermanagement{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+
+        .watermanagementlist{
+        margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+    .fertilizer{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+
+        .fertilizer_heading{
+            display: flex;
+            flex-direction: column;
+
+
+            .heading_left{
+                width: 75%;
+            }
+
+            .heading_right{
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+                a{
+                    padding-left: 20px;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .fertilizerbtn
+        {
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            cursor: pointer;
+
+            .btnorg{
+                width: 100px;
+                height: 36px;
+                background: #D7F6C6;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                hr{
+                    background-color: #ffffff;
+                    height: 3px;
+                    width: 80px;
+                    border: none;
+                }
+                
+            }
+
+            .btnorgnot{
+                width: 100px;
+                height: 36px;
+                background: #ffffff;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                hr{
+                    background-color: #ffffff;
+                    height: 3px;
+                    width: 90px;
+                    border: none;
+                }
+                
+            }
+
+            .btnche{
+                width: 100px;
+                height: 36px;
+                background: #D7F6C6;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-left: 100px;
+                hr{
+                    background-color: #ffffff;
+                    height: 3px;
+                    width: 90px;
+                    border: none;
+                }
+            }
+
+            .btnchenot{
+                width: 100px;
+                height: 36px;
+                background: #ffffff;
+                box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+                border-radius: 8px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-left: 100px;
+                hr{
+                    background-color: #ffffff;
+                    height: 3px;
+                    width: 90px;
+                    border: none;
+                }
+            }
+
+        }
+        .fertilizerlist
+        {
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            width: 100vw;
+    
+        }
+    }
+
+    .disease{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+
+        .diseaseliat{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-right: 100px;
+            width: 100vw;
+
+        }
+
+    }
+
+
+    .harvesting{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+
+        .harvestinglist{
+        margin-top: 20px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+    }
+
+
+
+    .video{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+
+        .videolist{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+    }
+
+}

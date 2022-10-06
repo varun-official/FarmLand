@@ -1,0 +1,6 @@
+/** @format */
+
+.app {
+  display: flex;
+  min-width: 400px;
+}

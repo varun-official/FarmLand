@@ -1,0 +1,22 @@
+/** @format */
+
+.sidebarchannelnotselect {
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+  color: rgba(39, 39, 39, 0.823);
+  cursor: pointer;
+}
+.sidebarchannel__hash {
+  font-size: 30px;
+  padding: 8px;
+}
+
+.sidebarchannelselect {
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  background-color: rgba(20, 74, 5, 0.58);
+}

@@ -1,0 +1,209 @@
+.overlayfer
+{
+    background-color: rgba($color: #000000, $alpha: 0.9);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+
+    .modelcontainerfer
+    {
+        width: 700px;
+        height: 450px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        border-radius: 8px;
+
+        .modal_leftfer
+        {
+            width: 55%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+        }
+
+        .modal_rightfer{
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            height: 100%;
+
+            .modal_closefer{
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 10px;
+                margin-right: 20px;
+                p{
+                    font-size: 30px;
+                cursor: pointer;
+
+                }
+            }
+
+            .modal_bodyfer
+            {
+                display: flex;
+                flex-direction: column;
+            justify-content: center;
+
+                margin-left: 30px;
+                h1
+                {
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 22px;
+                    line-height: 32px;
+                }
+                h2
+                {
+                    margin-left: 10px;
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                }
+                .sellerfer
+                {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 20px;
+
+                }
+                .locationfer
+                {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+
+                .pricefer{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                .needfer{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                .sellfer{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    text-align: center;
+                    margin-top: 20px;
+                }
+
+                .modalbtnfer
+                {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-top: 20px;
+
+
+                    .btnclosefer
+                    {
+
+                        width: 100px;
+                        height: 50px;
+                        background-color:red;
+                        border-radius: 8px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+
+                        h2{
+                        text-align: center;
+
+                            margin: 15px 15px 15px 10px;
+                            color: #ffffff;
+                            font-size: 22px;
+
+                        }
+                    }
+
+                    .btnsellfer
+                    {
+                        width: 100px;
+                        height: 50px;
+                        background-color: green;
+                        margin-left: 1.9rem;
+                        border-radius: 8px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+
+
+
+                        h2{
+
+                            text-align: center;
+                            color: #ffffff;
+                            font-size: 22px;
+
+                        }
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
+}
+@media (max-width: 750px)
+{
+.overlayfer{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    .modelcontainerfer{
+        width: 350px;
+    
+    .modal_leftfer
+    {
+        display: none;
+    }
+    .modal_rightfer{
+        width: 100%;
+        height: 100%;
+
+        .modal_bodyfer{
+            h1{
+                font-size: 18px;
+            }
+        }
+    }
+}
+}
+}
+

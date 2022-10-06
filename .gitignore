@@ -3,7 +3,8 @@
 /.github
 Dockerfile
 nginx.conf
-
+.env
+/.firebase
 
 # dependencies
 /node_modules

@@ -1,0 +1,73 @@
+/** @format */
+
+.chat {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex: 0.75;
+  background-color: white;
+  height: 91.7vh;
+  min-width: 600px;
+}
+.chat__messages {
+  flex: 1;
+  overflow-y: scroll;
+}
+.chat__input {
+  color: black;
+  display: grid;
+
+  grid-template-columns: 88% 8% 4%;
+  padding: 15px;
+  background: #eee;
+  padding: 10px 15px;
+  align-items: center;
+  margin-top: 19px;
+  bottom: 0;
+  height: 9%;
+}
+.input > input {
+  padding: 5px;
+  padding-left: 15px;
+  width: 100%;
+  background: white;
+  border: none;
+  border-radius: 30px;
+  outline-width: 0;
+  color: rgb(0, 0, 0);
+  font-size: large;
+}
+.chat_input-emoji {
+  // border: 1px solid black;
+}
+
+.chat_input-emoji > div {
+  position: absolute;
+  left: 0;
+  bottom: 68px;
+}
+.chat_input-emoji > img {
+  cursor: pointer;
+  padding-left: 30%;
+  align-items: center;
+  justify-items: center;
+}
+
+.chat__input > button {
+  border: none;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.emoji-icon {
+  transform: scale(1.5);
+}
+
+/* .chat__input > form {
+  flex: 1;
+}
+.chat__inputButton {
+} */
+/* .chat__inputIcons > .MuiSvgIcon-root {
+  padding: 5px;
+} */

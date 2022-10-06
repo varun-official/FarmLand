@@ -1,0 +1,25 @@
+.profile_main
+{
+    display: flex;
+    flex-direction: column;
+    .profile_owner
+    {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+
+        .profile_owner_details
+        {
+            margin: 20px 180px 20px 180px;
+            display: flex;
+            flex-direction: column;
+
+            .details
+            {
+                margin-top: 20px;
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
+}

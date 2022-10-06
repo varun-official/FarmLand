@@ -1,0 +1,75 @@
+.editoverlay{
+    background-color: rgba($color: #000000, $alpha: 0.9);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -65vh;
+    margin-left: -70px;
+    
+    
+        .editmodelcontainer
+        {
+            width: 700px;
+            height: 600px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+    
+            .btncover{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            .closebtn{
+                margin-right: 10px;
+                font-size: 30px;
+                cursor: pointer;
+            }
+    
+    
+        }
+        .modelbody
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 20px 20px 0px 20px;
+            }
+            
+           .cropsave{
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               margin-top: 30px;
+    
+               .savecrop{
+                padding: 15px;
+                background-color: green;
+                width: 300px;
+                border-radius: 8px;
+                text-align: center;
+                color: #ffffff;
+               }
+
+               .savecropdisable{
+                padding: 15px;
+                background-color: green;
+                width: 500px;
+                border-radius: 8px;
+                text-align: center;
+                color: #ffffff;
+                pointer-events: none;
+                opacity: 0.3;
+               }
+    
+           }
+    
+    
+        }
+    
+    }

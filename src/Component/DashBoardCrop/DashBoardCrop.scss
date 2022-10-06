@@ -1,0 +1,268 @@
+.dashboard_main
+{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+    background-color: #e5e5e5;
+
+    .dashboard_body
+    {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    
+
+        .dashboard_left
+        {
+           margin: 40px;
+
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            border-radius: 8px;
+
+
+ 
+
+
+            .dashboard_left_1
+            {
+                width: 95%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                 margin-left: 35px;
+            h1{
+                margin-top: 30px;
+                margin-bottom: 10px;
+                font-size: 22px;
+            }
+
+            }
+
+            .dashboard_left_2
+            {
+                margin-top: 30px;
+                width: 95%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 35px;
+
+                margin-bottom: 30px;
+
+                h1{
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    font-size: 22px; 
+                }
+
+                .trnscat{
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    hr{
+                        height:3px;
+                        border: none;
+                        background-color:rgba(20, 74, 5, 0.7);
+                    }
+                }
+            }
+        }
+
+        .dashboard_right
+        {
+           
+
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 40px 40px 40px 20px;
+            align-items: center;
+            
+
+            .dahsboard_pofile{
+                width: 100%;
+                height: 20%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .dashprofit
+            {
+                width: 100%;
+                height: 20%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: #ffffff;
+                border-radius: 8px;
+
+                .profit
+                {
+                    width: 50%;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color:rgba(20, 74, 5, 0.05);
+                    margin: 10px;
+                border-radius: 8px;
+                     
+                h1{
+                    font-weight: 500;
+                    font-size: 22px;
+
+                }
+
+                    h2{
+                        margin-top: 20px;
+                    }
+                }
+                .totalprderprofit
+                {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: rgba(20, 74, 5, 0.05);
+                    margin-right: 10px;
+                    border-radius: 8px;
+                    h1{
+                        font-weight: 500;
+                        font-size: 22px;
+                        text-transform: capitalize;
+
+
+                    }
+
+                    h2{
+                        margin-top: 20px;
+                    }
+                    
+                }
+            }
+
+            .dashpayout
+            {
+                width: 100%;
+                height: 20%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: #ffffff;
+                border-radius: 8px;
+                margin-top: 30px;
+                .profit
+                {
+                    width: 50%;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color:rgba(20, 74, 5, 0.05);;
+                    margin: 10px;
+                border-radius: 8px;
+                     
+                h1{
+                    font-weight: 500;
+                    font-size: 22px;
+                    text-transform: capitalize;
+
+
+                }
+
+                    h2{
+                        margin-top: 20px;
+                    }
+                }
+                .totalprderprofit
+                {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: rgba(20, 74, 5, 0.05);;
+                    margin-right: 10px;
+                    border-radius: 8px;
+                    h1{
+                        font-weight: 500;
+                        font-size: 22px;
+                        text-transform: capitalize;
+
+
+                    }
+
+                    h2{
+                        margin-top: 20px;
+                    }
+                    
+                }
+            }
+
+            .dashprogress
+            {
+                width: 100%;
+                height: 40%;
+                display: flex;
+                flex-direction: column;
+                background-color: #ffffff;
+                margin-top: 30px;
+                border-radius: 8px;
+                padding-bottom: 15px;
+                h2{
+                    margin-top: 20px;
+                    margin-left: 14px;
+                }
+
+                .progresslist
+                {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+
+
+                    .cropname
+                    {
+                        margin-top: 10px;
+                        margin-left: 20px;
+                        text-transform: capitalize;
+                    }
+                    
+                    .progressdoen
+                    {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    .prgressinfo
+                    {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}

@@ -16,13 +16,6 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_APP_ID,
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
-
-  // apiKey: "AIzaSyCYFje28C_n4T-YHe2i5mqcT54u-Vv03ek",
-  // authDomain: "us-gcp-ame-con-116-npd-1.firebaseapp.com",
-  // projectId: "us-gcp-ame-con-116-npd-1",
-  // storageBucket: "us-gcp-ame-con-116-npd-1.appspot.com",
-  // messagingSenderId: "244053109441",
-  // appId: "1:244053109441:web:efaa9a74047f7920820240"
 };
 const app = initializeApp(firebaseConfig);
 //export const auth=app.auth()

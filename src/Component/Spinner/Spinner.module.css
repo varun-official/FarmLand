@@ -1,0 +1,59 @@
+.spinner_root{
+    position: absolute;
+    top: 241px;
+    left: 548px;
+     display: flex; 
+    justify-content: space-around;
+    z-index: 100;
+}
+.spinner{
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.spinner div{
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 6px solid transparent;
+    border-top-color: #d12a2e;
+    border-radius: 50%;
+    animation: spinnerOne 1.2s linear infinite;
+    z-index: 100;
+}
+.spinner div:nth-child(2){
+    border: 10px solid transparent;
+    border-bottom-color: #d12a2e;
+    animation: spinnerTwo 1.2s linear infinite;
+    z-index: 100;
+
+}
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(54, 53, 53, 0.75);
+}
+
+@keyframes spinnerOne {
+    0%{transform: rotate(0deg); border-width: 6px;}
+    50%{transform: rotate(180deg); border-width: 1px;}
+    100%{transform: rotate(360deg); border-width: 6px;}
+}
+
+@keyframes spinnerTwo {
+    0%{transform: rotate(0deg); border-width: 1px;}
+    50%{transform: rotate(180deg); border-width: 6px;}
+    100%{transform: rotate(360deg); border-width: 1px;}
+}
+@media screen and (min-width:1440px) {
+    .spinner_root{
+      top: 320px;
+      left: 650px;
+    }
+    
+  }

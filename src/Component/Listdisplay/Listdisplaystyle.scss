@@ -1,0 +1,15 @@
+.listmain{
+    display: flex;
+    flex-direction: row;
+
+    width: 60vw;
+    height: 30px;
+    margin-top: 8px;
+    margin-bottom: 25px;
+    
+
+    p{
+        padding-left: 20px;
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,82 @@
+/** @format */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 0.25;
+  background-color: rgba(20, 74, 5, 0.2);
+  height: 91.7vh;
+}
+.sidebar__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: rgba(0, 0, 0, 0.823);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.823);
+  font-weight: 500;
+  font-size: larger;
+}
+.sidebar__channels {
+  flex: 1;
+}
+.sidebar__addChannel {
+  cursor: pointer;
+}
+.sidebar__addChannel:hover {
+  color: rgba(0, 0, 0, 0.823);
+}
+.sidebar__channelsHeder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.823);
+}
+.sidebar__header {
+  display: flex;
+  align-items: center;
+}
+.sidebar__voice,
+.sidebar__profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.823);
+  padding: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.823);
+  height: 9%;
+}
+.sidebar__voiceInfo {
+  flex: 1;
+  padding: 10px;
+}
+.sidebar__voiceIcon {
+  color: #4fb185;
+}
+.sidebar__voiceInfo > h3 {
+  color: #4fb185;
+}
+.sidebar__voiceInfo > p {
+  font-size: smaller;
+}
+.sidebar__voiceIcons > .MuiSvgIcon-root {
+  padding: 10px;
+}
+.sidebar__voiceIcons > .MuiSvgIcon-root:hover {
+  color: rgba(0, 0, 0, 0.823);
+}
+.sidebar__profileInfo {
+  flex: 1;
+  padding: 10px;
+}
+.sidebar__profileInfo > h3 {
+  color: rgba(0, 0, 0, 0.823);
+  text-transform: capitalize;
+}
+.sidebar__profileIcons > .MuiSvgIcon-root {
+  padding: 10px;
+}
+.sidebar__profileIcons > .MuiSvgIcon-root:hover {
+  color: rgba(0, 0, 0, 0.823);
+}

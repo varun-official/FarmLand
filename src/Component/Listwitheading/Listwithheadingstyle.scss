@@ -1,0 +1,27 @@
+.listheadingmain{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width: 90%;
+
+
+    .listbox{
+        margin-right: 20px;
+        padding: 30px;
+        background: #FFFFFF;
+        border: 1px solid #cccccc;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+
+    h3{
+        text-transform: capitalize;
+    }
+
+    p{
+        font-size: 22px;
+        margin-top: 8px;
+        line-height: 32px;
+    }
+    }
+
+}

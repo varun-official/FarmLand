@@ -1,0 +1,166 @@
+.cropmarketmain{
+    display: flex;
+    flex-direction: column;
+     
+    .markettop{
+        display: flex;
+        flex-direction: row;
+
+        .carousel{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 65%;
+            height: 420px;
+
+        }
+
+        .banner{
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            margin-left: 60px;
+
+            .eachbanner{
+                border-radius: 8px;
+                margin-bottom: 20px;
+                height: 121px;
+                background-image: linear-gradient(to left top, #144a05, #446e08, #79930b, #b5b712, #f9d923);
+
+
+                position: relative;
+                background-color: black;
+            
+             img{
+                width: 500px;
+                height: 121px;
+                object-fit: cover;
+                border-radius: 8px;
+             }
+
+             .text-block{
+                 p{
+                    font-family: 'Montserrat';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 28px;
+                    color: #000000;
+                 }
+             }
+            }
+        }
+    }
+
+
+    .cropcat{
+        display: flex;
+        flex-direction: column;
+        margin-left: 60px;
+        margin-top: 20px;
+        
+        
+        .catlist{
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+
+
+            .cropcatmain{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-right: 30px;
+
+            
+            
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 27px;
+            
+                h5{
+                    padding-right: 10px;
+                    hr{
+                        display: none;
+                    }
+                }
+
+                
+            
+            }
+            
+            .cropcatmainactive{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin-right: 30px;
+            
+            
+                font-style: normal;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 27px;
+            
+                h5{
+                    color: #000000;
+                    padding-right: 10px;
+
+                    hr{
+                        width: 100%;
+                        border: none;
+                        height: 3px;
+                        background-color: rgba(20, 74, 5, 0.7);
+                    }
+                }
+            }
+        }
+
+ 
+    }
+
+
+
+    .marketcard
+    {
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      .cardheading{
+          display: flex;
+          flex-direction: row;
+        h5{
+            margin-left: 10px;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+    
+            }
+
+      }
+
+      hr{
+          height: 3px;
+          background-color: #597F4F;
+          border: none;
+          width: 90%;
+          margin-left: 10px;
+      }
+
+
+        .cardlist{
+            display: flex;
+            flex-direction: row;
+            margin-left: 10px;
+            flex-wrap: wrap;
+            flex-basis: 20%;
+        }
+    }
+}

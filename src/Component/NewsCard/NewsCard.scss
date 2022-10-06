@@ -1,0 +1,13 @@
+.news_image{
+    max-width: 50px;
+    width: 50px;
+    height: 100px;
+    
+}
+.description{
+    overflow: hidden;
+    text-overflow:inherit;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}

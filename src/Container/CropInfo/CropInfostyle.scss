@@ -1,0 +1,112 @@
+.croinfomain
+{
+
+    .carousel{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 96%;
+        img{
+            object-fit: cover;
+        }
+        margin: 40px 60px 40px 40px;
+        border-radius:  10px 10px 10px 10px;
+        height: 400px;
+        box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .cropshort{
+        margin-top: 30px;
+
+        h2{
+            margin-left: 40px;
+        }
+
+        hr{
+            margin-left: 40px;
+            width: 60%;
+        }
+
+        .cropdiv{
+            margin-left: 20px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-basis: 25%;
+        }
+    }
+
+    .croplong{
+        margin-top: 30px;
+
+        h2{
+            padding-left: 40px;
+        }
+        .cropdiv{
+            margin-left: 20px;
+            margin-right: 40px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-basis: 25%;
+        }
+    }
+
+    .cropdemand{
+        margin-top: 50px;
+
+        h2{
+            margin-left: 40px;
+        }
+
+        hr{
+            margin-left: 40px;
+            width: 60%;
+        }
+
+        .cropdivdemand{
+            margin-left: 20px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-basis: 25%;
+        }
+
+        .weatherforecast{
+            margin-top: 30px;
+            margin-left: 20px;
+            margin-bottom: 30px;
+
+            h2{
+                margin-left:  25px;
+            }
+
+        }
+    }
+
+    .offer{
+        margin-top: 30px;
+        h2{
+            margin-left: 40px;
+        }
+        .offerlist{
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-basis: 20%;
+        }
+    }
+
+
+
+}
+
+

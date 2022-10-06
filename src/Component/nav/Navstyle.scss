@@ -1,0 +1,142 @@
+.nav{
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background-color: rgba(20, 74, 5, 0.7);
+    height: 80px;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .navlogo{
+        margin-left: 50px;
+        color: #fff;
+        
+        span{
+            color: #F9D923;
+        }
+    }
+    .navlink{
+        display: flex;
+        flex-direction: row;
+        color: #ffffff;
+
+
+        .navitem{
+            display: flex;
+            flex-direction: column;
+
+
+            hr{
+                margin-top: 2px;
+                margin-left: 50px;
+                height: 3px;
+                border: none;
+                background-color: #ffffff;
+            }
+        }
+
+
+        .navitemon{
+            display: flex;
+            flex-direction: column;
+
+     h3{
+         font-weight: 900;
+     }
+            hr{
+                margin-top: 2px;
+                margin-left: 50px;
+                height: 3px;
+                border: none;
+                background-color: #ffffff;
+            }
+        }
+
+        h3{
+            margin-left: 50px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+    }
+
+    .searchbar{
+        width: 260px;
+        height: 50px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 20px;
+
+
+        h3{
+            color: #ffffff;
+            margin-left: 5px;
+            font-weight: 400;
+        }
+
+        input{
+            width: 260px;
+            height: 50px;
+            border-radius: 50px;
+            border: none;
+            font-size: 22px;
+
+
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+    .profile{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 50px;
+        color: #ffffff;
+        cursor: pointer;
+
+
+        
+        h3{
+            font-weight: 500;
+
+        }
+
+        .profiledrop{
+            position: absolute;
+            top: 80px;
+            right: -14px;
+            background-color: rgba(20, 74, 5, 0.7);
+            width: 190px;
+            text-align: center;
+            border-radius: 0 0 0px 0px;
+            overflow: hidden;
+            z-index: 10;
+
+            h3{
+                padding: 5px;
+            font-weight: 500;
+            margin-bottom: 5px;
+            margin-top: 3px;
+
+             &:hover{
+                 color: #F9D923;
+             }
+
+            }
+        }
+    }
+}
+
+@media (max-width: 900px)
+{
+    .nav{
+        display: none;
+    }
+}
