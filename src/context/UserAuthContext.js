@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import axios from 'axios';
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -9,6 +10,7 @@ import {
 import {collection,addDoc, getDocs,doc,deleteDoc,updateDoc, getDoc, query, orderBy} from 'firebase/firestore'
 import {auth,db} from "../config/firebase"
 
+const API="http://localhost:8000/api"
 
 const userAuthContext=createContext();
 
@@ -32,24 +34,28 @@ export function UserAuthContextProvider({children}){
     const[cropMarketData,setCropMarket]=useState({})
     
 
-    function signUp(email,password){
-        return createUserWithEmailAndPassword(auth,email,password).then(()=>{
-            return "success"
-        }).catch((error)=>{
-            const errorCode=error.code
-            return errorCode
-            
-        })
+    async function signUp(inputData){
+        try {
+            const data = {
+                name:inputData.user_name,
+                email:inputData.email,
+                password:inputData.password,
+                phoneno:inputData.phoneNo,
+                location:inputData.location
+            }
+            const res = await axios.post(`${API}/signup`,data);
+            return res.data;
+            } catch (error) {
+                return error.code;
+            }
     }
-    function logIn(email,password){
-        return signInWithEmailAndPassword(auth,email,password).then(()=>{
-            return "success"
-
-        }).catch((error)=>{
-            const errorCode=error.code
-            const errorMessage=error.message
-            return errorCode
-        })
+    async function logIn(email,password){
+        try {
+        const res = await axios.post(`${API}/signin`,{email,password});
+        return res.data;    
+        } catch (error) {
+            return error;
+        }
     }
     const logout =async()=>{
         signOut(auth).then(() => {

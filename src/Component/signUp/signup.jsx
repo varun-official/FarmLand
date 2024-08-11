@@ -104,8 +104,8 @@ export default function Signup() {
     //  console.log(formValues);
     if (isSubmit) {
       try {
-        const a = await signUp(formValues.email, formValues.password);
-        if (a != "success") {
+        const res = await signUp(formValues);
+        if (!res?.id) {
           setErrorDisplay(true);
         } else {
           addUser(formValues);
@@ -243,30 +243,6 @@ export default function Signup() {
                   The requested email id already in use.
                 </Alert>
               )}
-              <div className="radio">
-                <label>
-                  <input
-                    type="radio"
-                    name="rb"
-                    id="raadio"
-                    value="Farmer"
-                    onChange={dynInput}
-                    onClick={handleChangeRadio}
-                    checked={selected === "Farmer"}
-                  />{" "}
-                  Farmer &nbsp;&nbsp;
-                  <input
-                    type="radio"
-                    name="rb"
-                    id="raadio2"
-                    value="Market"
-                    onChange={dynInput}
-                    onClick={handleChangeRadio}
-                    checked={selected === "Market"}
-                  />{" "}
-                  Market owner
-                </label>
-              </div>
               <div className="input-field">
                 <div className="icon">
                   <FaUserAlt size={16} />
