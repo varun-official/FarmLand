@@ -9,13 +9,14 @@ import { getStorage } from "firebase/storage";
 // import "firebase/storage"
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_APP_KEY,
-  authDomain: process.env.REACT_APP_Auth_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+  apiKey: "AIzaSyBJz4z15ig7bOlTs8zrFaosiwycRC0hx7o",
+  authDomain: "farmland-89e6d.firebaseapp.com",
+  databaseURL: "https://farmland-89e6d-default-rtdb.firebaseio.com",
+  projectId: "farmland-89e6d",
+  storageBucket: "farmland-89e6d.appspot.com",
+  messagingSenderId: "288435387826",
+  appId: "1:288435387826:web:13e4ff20e72c61eec078ab",
+  measurementId: "G-GFENF74M0L"
 };
 const app = initializeApp(firebaseConfig);
 //export const auth=app.auth()

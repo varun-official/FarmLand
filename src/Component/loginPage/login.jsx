@@ -57,8 +57,9 @@ export default function Login() {
     e.preventDefault();
     try {
       const a=await logIn(email, values.password);
-      if(a!="success"){
-        setError(a)
+      console.log("login::",a);
+      if(!a?.user?.id){
+        setError(a.message)
         setErrorDisplay(true)
         navigate("/login");
 
