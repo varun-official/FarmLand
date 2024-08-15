@@ -40,10 +40,22 @@ var userSchema = new mongoose.Schema(
       required: true,
       trim: true
     },
-    location:{
+    pincode:{
       type: String,
       required: true
-    }
+    },
+    district: {
+      type: String,
+      trim: true
+    },
+    region: {
+      type: String,
+      trim: true
+    },
+    state: {
+      type: String,
+      trim: true
+    },
   },
   { timestamps: true }
 );

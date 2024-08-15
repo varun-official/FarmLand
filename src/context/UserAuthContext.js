@@ -41,7 +41,10 @@ export function UserAuthContextProvider({children}){
                 email:inputData.email,
                 password:inputData.password,
                 phoneno:inputData.phoneNo,
-                location:inputData.location
+                pincode:inputData.pincode,
+                district:inputData.district,
+                region:inputData.region,
+                state:inputData.state
             }
             const res = await axios.post(`${API}/signup`,data);
             return res.data;

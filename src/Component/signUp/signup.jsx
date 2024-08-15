@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./signup.css";
 import { useNavigate } from "react-router";
-import { FaAddressBook, FaUserAlt } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
 import { MdLocationPin } from "react-icons/md";
@@ -12,54 +12,32 @@ import {
   Input,
   InputAdornment,
   IconButton,
-  Alert,
+  Snackbar,
 } from "@mui/material";
-import { useUserAuth } from "../../context/UserAuthContext";
-import { MenuItem, Select } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import axios from "axios";
+import { useUserAuth } from "../../context/UserAuthContext";
 
 export default function Signup() {
   const navigate = useNavigate();
 
-  const Login = () => {
-    navigate("/login");
-  };
-  // const Cropinfo = () => {
-  //   navigate("/");
-  // };
-
   const initialValues = {
-    user_type: "",
     user_name: "",
     phoneNo: "",
     email: "",
     password: "",
-    location: "",
-    shop: "",
-    city: "",
+    pincode: "",
   };
+  
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const { signUp, addUser, getLongTermCrops } = useUserAuth();
   const [errorDisplay, setErrorDisplay] = useState(false);
-
-  const [selected, setSelected] = useState("Farmer");
-  const [value, setValue] = useState("");
-
-  const menuItems = [
-    "Uttar Pradesh",
-    "Karnataka",
-    "Madhya Pradesh",
-    "Kerala",
-    "Gujarat",
-  ];
-
-  const [values, setValues] = React.useState({
-    password: "",
-    showPassword: false,
-  });
+  const [values, setValues] = useState({ password: "", showPassword: false });
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const { signUp, addUser } = useUserAuth();
 
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword });
@@ -74,13 +52,6 @@ export default function Signup() {
     formValues.password = event.target.value;
   };
 
-  formValues.user_type = selected;
-
-  const handleChangeRadio = (event) => {
-    // console.log(event.target.value);
-    setSelected(event.target.value);
-  };
-
   const handleChange = (e) => {
     if (errorDisplay) {
       setErrorDisplay(false);
@@ -91,61 +62,74 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    formValues.location = value;
-    setFormErrors(validate(formValues));
-    if (Object.keys(formErrors).length === 0) {
+    const errors = await validate(formValues);
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length === 0) {
       setIsSubmit(true);
-    }
-    if (document.getElementById("shop")) {
-      formValues.shop = document.getElementById("shop").value;
-    } else if (selected === "Farmer") {
-      formValues.shop = "";
-    }
-    //  console.log(formValues);
-    if (isSubmit) {
-      try {
-        const res = await signUp(formValues);
-        if (!res?.id) {
-          setErrorDisplay(true);
-        } else {
-          addUser(formValues);
-          navigate("/CropInfo");
+      if(isSubmit){
+        try {
+          const res = await signUp(formValues);
+          if (!res?.id) {
+            setErrorDisplay(true);
+          } else {
+            addUser(formValues);
+            navigate("/CropInfo");
+          }
+        } catch (err) {
+          console.error(err);
         }
-      } catch (err) {}
+      }
+    } else {
+      setErrorMessage(Object.values(errors).join(" | "));
+      setSnackbarOpen(true);
     }
   };
 
+  const handleCloseSnackbar = () => {
+    setSnackbarOpen(false);
+  };
+
   useEffect(() => {
-    //console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      // console.log(formValues);
+      // Additional logic after successful validation
+      setIsSubmit(true);
+
     }
   }, [formErrors]);
 
-  const validate = (values) => {
+  const validatePincode = async (pincode) => {
+    try {
+      const response = await axios.get(
+        `https://api.postalpincode.in/pincode/${pincode}`
+      );
+      const data = response.data[0];
+      if (data.Status === "Error" || data.PostOffice === null) {
+        return "Invalid pincode!";
+      }else{
+        formValues.district = data.PostOffice[0]?.District;
+        formValues.region = data.PostOffice[0]?.Region;
+        formValues.state = data.PostOffice[0]?.State;
+
+      }
+    } catch (error) {
+      console.error("Error validating pincode:", error);
+      return "Error validating pincode!";
+    }
+    return null;
+  };
+
+  const validate = async (values) => {
     const errors = {};
-    // const regex = /^\d{10}$/;
     if (!values.user_name) {
       errors.user_name = "Username is required!";
     }
-    // if (!values.phoneNo) {
-    //   errors.password = "Usernam/PhoneNo is required";
-    // }
-    // else if (!regex.test(values.phoneNo)) {
-    //   errors.phoneNo = "This is not a valid phoneNo!";
-    // }
     if (!values.password) {
       errors.password = "Password is required";
     } else if (values.password.length < 4) {
       errors.password = "Password must be more than 4 characters";
     } else if (values.password.length > 10) {
       errors.password = "Password cannot exceed more than 10 characters";
-    }
-    if (!values.city) {
-      errors.city = "City is required!";
-    }
-    if (!values.location) {
-      errors.location = "State is required!";
     }
     if (!values.email) {
       errors.email = "Email is required!";
@@ -154,48 +138,17 @@ export default function Signup() {
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       )
     ) {
-      errors.email = "Email is not vaid";
+      errors.email = "Email is not valid";
+    }
+    if (!values.pincode) {
+      errors.pincode = "Pincode is required!";
+    } else {
+      const pincodeError = await validatePincode(values.pincode);
+      if (pincodeError) errors.pincode = pincodeError;
     }
 
     return errors;
   };
-
-  function insertAfter(referenceNode, newNode) {
-    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-  }
-
-  function dynInput(rb) {
-    var ReactDOMServer = require("react-dom/server");
-    if (document.getElementById("raadio2").checked === true) {
-      var input = document.createElement("input");
-      input.type = "text";
-      input.placeholder = "Shop";
-      input.name = "text-837";
-      input.id = "shop";
-      input.required = "true";
-      input.value = formValues.shop;
-      var i = document.createElement("div");
-      i.className = "icon";
-      i.innerHTML = ReactDOMServer.renderToString(<FaAddressBook size={16} />);
-      var div = document.createElement("div");
-      div.id = rb.target.name + "div";
-      div.className = "input-field";
-      div.appendChild(i);
-      div.appendChild(input);
-      var div2 = document.getElementById("insertinputs");
-      insertAfter(div2, div);
-    }
-    if (
-      document.getElementById("raadio2").checked === false &&
-      document.getElementById(rb.target.name + "div")
-    ) {
-      document.getElementById(rb.target.name + "div").remove();
-    }
-
-    formValues.user_type = document.querySelector(
-      'input[name="rb"]:checked'
-    ).value;
-  }
 
   return (
     <Container>
@@ -203,17 +156,16 @@ export default function Signup() {
         <div className="panels-container">
           <div className="panel left-panel">
             <div className="content">
-              <h3>One of us ?</h3>
+              <h3>One of us?</h3>
               <p>
-                We are Helping Farmer to produce there product and 24/7
-                guildance to Farmers
+                We are Helping Farmers produce their products and providing 24/7
+                guidance.
               </p>
               <button
                 className="btn transparent"
                 id="sign-in-btn"
-                onClick={Login}
+                onClick={() => navigate("/login")}
               >
-                {" "}
                 Log in
               </button>
             </div>
@@ -227,22 +179,10 @@ export default function Signup() {
               action="/signup"
               method="POST"
               className="sign-in-form"
-              name="myForm"
               onSubmit={handleSubmit}
             >
               <h2 className="title">Sign up</h2>
-              {errorDisplay && (
-                <Alert
-                  sx={{
-                    width: "380px",
-                    borderRadius: "55px",
-                    marginBottom: "20px",
-                  }}
-                  severity="error"
-                >
-                  The requested email id already in use.
-                </Alert>
-              )}
+              
               <div className="input-field">
                 <div className="icon">
                   <FaUserAlt size={16} />
@@ -255,11 +195,7 @@ export default function Signup() {
                   onChange={handleChange}
                 />
               </div>
-              {formValues.user_name.length === 0 ? (
-                <p>{formErrors.user_name}</p>
-              ) : (
-                ""
-              )}
+              
               <div className="input-field">
                 <div className="icon">
                   <MdEmail size={19} />
@@ -272,7 +208,7 @@ export default function Signup() {
                   onChange={handleChange}
                 />
               </div>
-              {formValues.email.length === 0 ? <p>{formErrors.email}</p> : ""}
+              
               <div className="input-field">
                 <div className="icon">
                   <BsFillTelephoneFill size={16} />
@@ -285,11 +221,7 @@ export default function Signup() {
                   onChange={handleChange}
                 />
               </div>
-              {formValues.phoneNo.length === 0 ? (
-                <p>{formErrors.phoneNo}</p>
-              ) : (
-                ""
-              )}
+              
               <div className="input-field">
                 <div className="icon">
                   <AiFillLock size={19} />
@@ -298,6 +230,7 @@ export default function Signup() {
                   type={values.showPassword ? "text" : "password"}
                   onChange={handlePasswordChange("password")}
                   value={values.password}
+                  placeholder="Password"
                   disableUnderline
                   endAdornment={
                     <InputAdornment position="end">
@@ -315,64 +248,44 @@ export default function Signup() {
                   }
                 />
               </div>
-              {formValues.password.length === 0 ? (
-                <p>{formErrors.password}</p>
-              ) : (
-                ""
-              )}
+              
               <div className="input-field">
                 <div className="icon">
                   <MdLocationPin size={19} />
                 </div>
                 <input
                   type="text"
-                  name="city"
-                  value={formValues.city}
-                  placeholder="Enter your city"
+                  name="pincode"
+                  value={formValues.pincode}
+                  placeholder="Enter your pincode"
                   onChange={handleChange}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault(); // Prevent form submission
+                      setFormErrors(validate(formValues));
+                    }
+                  }}
                 />
               </div>
-              {formValues.city.length === 0 ? (
-                <p id="insertinputs">{formErrors.city}</p>
-              ) : (
-                ""
-              )}
-              <div className="input-field">
-                <div className="icon">
-                  <MdLocationPin size={19} />
-                </div>
-                <Select
-                  onChange={(e) => {
-                    setValue(e.target.value);
-                  }}
-                  className="select-box"
-                  variant="standard"
-                  value={value}
-                  disableUnderline
-                  sx={{ fontWeight: 600 }}
-                >
-                  {menuItems.map((val) => (
-                    <MenuItem
-                      value={val}
-                      className="select-box-option"
-                      sx={{ fontWeight: 600 }}
-                    >
-                      {val}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </div>
-              {value.length === 0 ? <p>{formErrors.location}</p> : ""}
 
               <input
                 type="submit"
                 className="btn"
-                value="Sign up" /*onClick={Cropinfo}*/
+                value="Sign up"
               />
             </form>
           </div>
         </div>
       </div>
+      
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+        message={errorMessage}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        sx={{ color: 'white', fontWeight: 'bold' }}
+      />
     </Container>
   );
 }
